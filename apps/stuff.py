@@ -1,6 +1,6 @@
 import web
 
-from utils.render import render
+from utils.jinja import render
 
 urls = (
     '', 'Index',
@@ -13,7 +13,7 @@ class Index:
 
 
     def GET(self):
-        return render('stuff/index.html')
+        return render('/stuff/index.html')
 
 
 app = web.application(urls, locals())
