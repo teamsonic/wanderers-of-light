@@ -4,12 +4,41 @@
 }
 
 body {
-    min-height: 2000px;
-    padding-top: 70px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     background-color: #d8d8d8;
 }
 
-div#body-container {
-    background-color: #d8d8d8;
+.nav-heading {
+    font-family: wanderers;
+    font-size: 24px;
 }
 
+li.login {
+    padding: 5px;
+    position: relative;
+    bottom: 5px;
+}
+
+.footer {
+    padding: 0px;
+    margin: 0px;
+    clear: both;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+}
+
+.footer .footer-top {
+    background-color: #FFF;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.footer .footer-content {
+    background-color: #000;
+    height: 0px;
+    color: #F8F8F8;
+    opacity: 0.9;
+}

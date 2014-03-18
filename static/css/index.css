@@ -4,7 +4,31 @@
 }
 
 .banner {
-    height: 250px;
+    height: 300px;
+    border-style: inset;
+    border-width: 5px;
+    background-color: #fff
+}
+
+div.blog-container, div.resources-container {
+    margin-top: 10px;
+}
+
+div.blog-entry, div.resource {
+    margin-bottom: 50px;
+    padding: 10px;
+    border-style: inset;
+    border-width: 5px;
+    background-color: #fff;
+}
+
+.blog-entry h2.blog-heading{
+    font-family: wanderers;
+    font-size: 48px;
+}
+
+.resource h3.resource-heading{
+    font-family: wanderers;
 }
 
 hr.full-width {

@@ -1,0 +1,44 @@
+[[- macro footer() -]]
+<div ng-app="Footer" ng-controller="FooterCtrl as footer">
+    <div class="footer">
+
+        <!-- Exposed Footer bar -->
+        <div class="footer-top" ng-click="footer.slide()">
+            <p class="text-center">
+                <span class="glyphicon" ng-class="footer.isHidden()"></span>
+            </p>
+        </div>
+
+        <!-- Hidden Footer Content -->
+        <div class="footer-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Main Site</h4>
+                        <ul>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Forums</li>
+                        </ul>
+                        <h5>Recruitment</h5>
+                        <ul>
+                            <li>LS Roster</li>
+                            <li>Join</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>Portal</h4>                    
+                        <ul>
+                            <li>Account</li>
+                            <li>Character</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+[[- endmacro -]]
