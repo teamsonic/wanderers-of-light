@@ -2,25 +2,54 @@
 [[ from '/carousel.html' import carousel ]]
 
 [[ set cssfiles = ['/static/css/carousel.css', '/static/css/index.css'] + cssfiles|d([]) ]]
+[[ set jsfiles = ['/static/js/index.js'] + jsfiles|d([]) ]]
 
 [[ block title ]]Home[[ endblock ]]
 
 [[ block sub_base ]]
-    <!-- Banner -->
-    <div class="banner">
-        <div class="row">
-            <div class="col-md-1 col-md-offset-3">
-                <img src="/static/img/warrior-of-light-cartoon.png" class="banner-img-side" />
+    <div ng-controller="IndexCtrl as index">
+
+        <!-- Banner -->
+        <div class="banner">
+            <div class="row">
+                <div class="col-md-1 col-md-offset-3">
+                    <img src="/static/img/warrior-of-light-cartoon.png" class="banner-img-side" />
+                </div>
+                <div class="col-md-4">
+                    <h1 class="text-center header">Wanderers of Light</h1>
+                    <img src="/static/img/moogle.png" class="banner-img-middle" />
+                    [# [- carousel() -] #]
+                </div>
+                <div class="col-md-1">
+                    <img src="/static/img/white-mage.png" class="banner-img-side" style="position: relative; right:75px" />
+                </div>
             </div>
-            <div class="col-md-4">
-                <h1 class="text-center header">Wanderers of Light</h1>
-                <img src="/static/img/moogle.png" class="banner-img-middle" />
-                [# [- carousel() -] #]
-            </div>
-            <div class="col-md-1">
-                <img src="/static/img/white-mage.png" class="banner-img-side" style="position: relative; right:75px" />
+        </div>
+        <hr class="full-width">
+
+        <div class="bottom-content-container">
+            <div class="row">
+
+                <!-- Blog -->
+                <div class="col-md-8 blog-container">
+                    <div class="blog-entry" ng-repeat="blog in index.blog_entries">
+                        <em><small class="text-left">{{ blog.timestamp }}</small></em>
+                        <br />
+                        <h2 class="text-center blog-heading">{{ blog.name }}</h2>
+                        <br />
+                        <p class="text-center">{{ blog.body }}</p>
+                    </div>
+                </div>
+
+                <!-- Resources -->
+                <div class="col-md-4 resources-container">
+                    <div class="resource">
+                        <h3 class="text-center resource-heading">News and Updates</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <hr class="full-width">
+               
+                                                
 [[ endblock ]]

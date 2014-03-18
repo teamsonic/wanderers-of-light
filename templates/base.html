@@ -1,15 +1,19 @@
 [[ extends '/html_skeleton.html' ]]
 [[ from '/navbar.html' import navbar ]]
+[[ from '/footer.html' import footer ]]
 
 [[ set use_bootstrap = True ]]
+[[ set use_angular = True ]]
 [[ set cssfiles = ['/static/css/base.css'] + cssfiles|d([]) ]]
-[[ set jsfiles = ['/static/js/lib/docs.min.js'] + jsfiles|d([]) ]]
+[[ set jsfiles = ['/static/js/lib/docs.min.js', '/static/js/base.js'] + jsfiles|d([]) ]]
 
 [[ block body ]]
-    <div class="container" id="body-container">
+    <div class="container" id="body-container" ng-app="Base">
         [- navbar() -]
-
+        
         [[ block sub_base ]][[ endblock ]]
-        [[ block footer ]][[ endblock ]]
+        [[ block footer ]]
+            [- footer() -]
+        [[ endblock ]]
     </div>
 [[ endblock ]]
