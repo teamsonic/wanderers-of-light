@@ -1,0 +1,15 @@
+@font-face {
+    font-family: wanderers;
+    src: url('/static/css/fonts/cretino.ttf');
+}
+
+body {
+    min-height: 2000px;
+    padding-top: 70px;
+    background-color: #d8d8d8;
+}
+
+div#body-container {
+    background-color: #d8d8d8;
+}
+

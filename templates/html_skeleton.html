@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    [[ block head ]]
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>[[ block title ]][[ endblock ]][- ' - ' if self.title() -]Wanderers of Light</title>
+        [[ if self.description() ]]<meta name="description" content="[[ block description ]][[ endblock ]]">[[ endif ]]
+        [[ if self.keywords() ]]<meta name="keywords" content="[[ block keywords ]][[ endblock ]]">[[ endif ]]
+
+        [[ if use_bootstrap ]]
+            <link href="/static/css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="/static/css/lib/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+        [[ endif ]]
+
+        [[ for cssfile in cssfiles ]]
+            <link href="[- cssfile -]" rel="stylesheet" type="text/css">
+        [[ endfor -]]
+
+        [[ if use_bootstrap or use_jquery ]]
+            <script src="/static/js/lib/jquery.min.js" type="text/javascript"></script>
+        [[ endif ]]
+
+        [[ if use_angular ]]
+            <script src="/static/js/lib/angular.min.js" type="text/javascript"></script>
+        [[ endif ]]
+
+        [[ if use_bootstrap ]]
+            <script src="/static/js/lib/bootstrap.min.js" type="text/javascript"></script>
+        [[ endif ]]
+
+        [[ for jsfile in jsfiles ]]
+            <script src="[- jsfile -]" type="text/javascript"></script>
+        [[ endfor ]]
+    [[ endblock ]]
+    </head>
+    <body>
+        [[ block body ]][[ endblock ]]
+    </body>
+</html>
+
+

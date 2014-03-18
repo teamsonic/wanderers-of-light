@@ -2,7 +2,7 @@ import web
 
 import apps.stuff as stuff
 
-from utils.render import render
+from utils.jinja import render
 
 
 urls = (
@@ -18,7 +18,7 @@ class Index:
 
 
     def GET(self):
-        return render('index.html', stuff='rawr')
+        return render('/index.html', {'stuff': 'rawr'})
 
 
 

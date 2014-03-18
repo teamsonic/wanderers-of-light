@@ -1,1 +1,26 @@
-stuffffffffffffff {{ stuff }}
+[[ extends '/base.html' ]]
+[[ from '/carousel.html' import carousel ]]
+
+[[ set cssfiles = ['/static/css/carousel.css', '/static/css/index.css'] + cssfiles|d([]) ]]
+
+[[ block title ]]Home[[ endblock ]]
+
+[[ block sub_base ]]
+    <!-- Banner -->
+    <div class="banner">
+        <div class="row">
+            <div class="col-md-1 col-md-offset-3">
+                <img src="/static/img/warrior-of-light-cartoon.png" class="banner-img-side" />
+            </div>
+            <div class="col-md-4">
+                <h1 class="text-center header">Wanderers of Light</h1>
+                <img src="/static/img/moogle.png" class="banner-img-middle" />
+                [# [- carousel() -] #]
+            </div>
+            <div class="col-md-1">
+                <img src="/static/img/white-mage.png" class="banner-img-side" style="position: relative; right:75px" />
+            </div>
+        </div>
+    </div>
+    <hr class="full-width">
+[[ endblock ]]

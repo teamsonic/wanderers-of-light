@@ -1,0 +1,31 @@
+@font-face {
+    font-family: wanderers;
+    src: url('/static/css/font/cretino.tff');
+}
+
+.banner {
+    height: 250px;
+}
+
+hr.full-width {
+    width: 100%;
+}
+
+img.banner-img-side {
+    height: 250px;
+    width: auto;
+}
+
+img.banner-img-middle {
+    position: relative;
+    left: 85px;
+    bottom: 50px;
+    height: 250px;
+    width: auto;
+}
+
+h1.header{ 
+    font-family: wanderers;
+    font-size: 48px;
+    z-index: 1;
+}

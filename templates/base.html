@@ -1,0 +1,15 @@
+[[ extends '/html_skeleton.html' ]]
+[[ from '/navbar.html' import navbar ]]
+
+[[ set use_bootstrap = True ]]
+[[ set cssfiles = ['/static/css/base.css'] + cssfiles|d([]) ]]
+[[ set jsfiles = ['/static/js/lib/docs.min.js'] + jsfiles|d([]) ]]
+
+[[ block body ]]
+    <div class="container" id="body-container">
+        [- navbar() -]
+
+        [[ block sub_base ]][[ endblock ]]
+        [[ block footer ]][[ endblock ]]
+    </div>
+[[ endblock ]]
