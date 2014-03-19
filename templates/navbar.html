@@ -1,4 +1,4 @@
-[[- macro navbar() -]]
+[[- macro navbar(location) -]]
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -12,9 +12,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/" class="nav-heading">Home</a></li>
-                    <li><a href="/about" class="nav-heading">About</a></li>
-                    <li><a href="/forum" class="nav-heading">Forum</a></li>
+                    <li[[ if not location ]] class="active"[[ endif ]]><a href="/" class="nav-heading">Home</a></li>
+                    <li[[ if location == 'about' ]] class="active"[[ endif ]]><a href="/about" class="nav-heading">About</a></li>
+                    <li[[ if location == 'forum' ]] class="active"[[ endif ]]><a href="/forum" class="nav-heading">Forum</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle nav-heading" data-toggle="dropdown">Recruitment <b class="caret"></b></a>
                         <ul class="dropdown-menu">
