@@ -1,6 +1,6 @@
 import web
 
-import apps.stuff as stuff
+import apps.forum as forum
 
 from utils.jinja import render
 
@@ -8,7 +8,7 @@ from utils.jinja import render
 urls = (
     '', 'Index',
     '/', 'Index',
-    '/stuff', stuff.app
+    '/forum', forum.app
 )
 
 
@@ -18,7 +18,7 @@ class Index:
 
 
     def GET(self):
-        return render('/index.html', {'stuff': 'rawr'})
+        return render('/index.html')
 
 
 

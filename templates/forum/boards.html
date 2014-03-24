@@ -1,0 +1,30 @@
+[[ extends 'forum_base.html' ]]
+
+[[ block title ]]Forum[[ endblock ]]
+
+[[ set jsfiles = ['/static/js/forum/index.js'] + jsfiles|d([]) ]]
+
+[[ block content ]]
+    <table class="table table-responsive table-striped">
+        <thead>
+            <tr>
+                <th>Board Title</th>
+                <th>Topics</th>
+                <th>Messages</th>
+            </tr>
+        </thead>
+        <tbody>
+            [[ for board in boards ]]
+            <tr>
+                <td>
+                    <a href="/forum/board/[- board.id -]"><strong>[- board.name -]</strong></a>
+                    <br />
+                    <small>[- board.description -]</small>
+                </td>
+                <td>[- board.topics -]</td>
+                <td>[- board.messages -]</td>
+            </tr>
+            [[ endfor ]]
+        </tbody>
+    </table>
+[[ endblock ]]

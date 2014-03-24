@@ -1,0 +1,54 @@
+[[ extends 'forum_base.html' ]]
+
+[[ set jsfiles = ['/static/js/forum/threads.js'] + jsfiles|d([]) ]]
+
+[[ block content ]]
+<div class="container" ng-controller="ForumThreadCtrl as forum_thread">
+    <div class="row">
+        <div class="col-md-4">
+            <div style="position: fixed; width: 315px;">
+                <h4 class="text-center">Create a Thread</h4>
+                <div class="form-group" ng-class="{'has-error': forum_thread.incomplete.name}">
+                    <input type="text" class="form-control has-error" placeholder="Title" ng-model="forum_thread.new_thread.name" />
+                </div>
+                <div class="form-group" ng-class="{'has-error': forum_thread.incomplete.message}">
+                    <textarea placeholder="Message" class="form-control" style="height: 300px" ng-model="forum_thread.new_thread.message"></textarea>
+                </div>
+                <p style="color: red" ng-show="forum_thread.dupe">This name has already been used.</p>
+                <img src="/static/img/ajax_loader.gif" ng-show="forum_thread.posting" />
+                <button class="btn btn-success" ng-click="forum_thread.createThread()" ng-hide="forum_thread.posting">Create</button>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-responsive table-striped">
+                <thead>
+                    <tr>
+                        <th>Title, Username, Date</th>
+                        <th>Last Post</th>
+                        <th>Replies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    [[ for thread in threads ]]
+                    <tr>
+                        <td>
+                            <a href="/forum/board/[- thread.board_id -]/thread/[- thread.id -]"><strong>[- thread.name -]</strong></a>
+                            <br />
+                            <small>[- thread.user.username -]</strong>
+                            <br />
+                            <small>[- thread.created.strftime('%Y-%m-%d %H:%M:%S') -]</strong>
+                        </td>
+                        <td>
+                            [- thread.latest_message.created.strftime('%Y-%m-%d %H:%M:%S') -]
+                            <br />
+                            by [- thread.latest_message.user.username -]
+                        </td>
+                        <td>[- thread.replies -]</td>
+                    </tr>
+                    [[ endfor ]]
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+[[ endblock ]]
