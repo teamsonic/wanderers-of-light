@@ -1,7 +1,7 @@
 BaseApp.controller("IndexCtrl", function($scope){
     //Executed on Controller load
     var index = this;
-    this.blog_entries = [
+    index.blog_entries = [
         {
             "name": "Hello!",
             "timestamp": "A few seconds ago",
